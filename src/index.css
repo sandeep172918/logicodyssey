@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-outfit: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html, body {
+    background-color: #0d0b12;
+    color: #f3f0f7;
+    font-family: var(--font-outfit);
+    overflow: hidden;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.font-serif-title {
+  font-family: var(--font-cinzel);
+}
+
+.font-mono-digits {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Glassmorphism styling */
+.glass-panel {
+  background: rgba(22, 17, 33, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-glow {
+  background: rgba(27, 20, 42, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(217, 180, 110, 0.35);
+  box-shadow: 0 0 35px -5px rgba(217, 180, 110, 0.2), 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Gold Gradient Text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF3D1 0%, #E8C172 35%, #CFA24D 70%, #F5DE9B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple-gradient-text {
+  background: linear-gradient(135deg, #E9D5FF 0%, #C084FC 50%, #9333EA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom glow animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
